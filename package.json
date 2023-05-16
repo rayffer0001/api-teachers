@@ -4,12 +4,12 @@
   "description": "Esta API esta dise;ada para gestionar profesores utilizando typescript.",
   "main": "index.js",
   "scripts": {
-    "build": "",
-    "prisma:generate": "",
-    "serve": "",
-    "start": "",
-    "dev": "",
-    "start:dev":""
+    "build": "tsc",
+    "prisma:generate": "prisma generate --schema=./src/schema.prisma",
+    "serve": "node dist/index.js",
+    "start": "npm-run-all prisma:generate serve",
+    "dev": "ts-node-dev ./src/index.ts",
+    "start:dev":"npm-run-all prisma:generate dev"
   },
   "keywords": [],
   "author": "",
