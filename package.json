@@ -4,7 +4,12 @@
   "description": "Esta API esta dise;ada para gestionar profesores utilizando typescript.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "",
+    "prisma:generate": "",
+    "serve": "",
+    "start": "",
+    "dev": "",
+    "start:dev":""
   },
   "keywords": [],
   "author": "",
