@@ -16,7 +16,7 @@ export class TeacherRoutes {
     }
 
     private initRoute(): void{  //inicializa las rutas
-        this._router.post('/create', this._teacherController.create.bind(this._teacherRepository)); //es hasta donde puedo acceder en una variable
+        this._router.post('/create', this._teacherController.create.bind(this._teacherController)); //es hasta donde puedo acceder en una variable
     }
 
     public getRoutes(): Router {

@@ -3,6 +3,9 @@ import { TeacherRoutes } from './app/routes/TeacherRoutes';
  //express es el framework que me permite trabajar con el http
  import  express from 'express';
  import config from "./config";
+ import cors from './app/middlewares/cors';
+ import morgan from './app/middlewares/logger-http';
+ import swaggerRouter from './app/middlewares/swagger/swagger';
 
  export class Server {
 
@@ -24,6 +27,9 @@ import { TeacherRoutes } from './app/routes/TeacherRoutes';
     private middleware(): void{ //van antes de las rutas
         this._app.use(express.json());
         this._app.use(express.urlencoded({extended: false}));
+        this._app.use(cors);
+        this._app.use(morgan);
+        this._app.use('/api-docs', swaggerRouter);
     }
 
     private routes(): void{

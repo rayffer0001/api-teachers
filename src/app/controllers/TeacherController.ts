@@ -4,6 +4,35 @@ import { Teacher } from './../../domain/entities/Teacher';
 import { ITeacherRepository } from './../../domain/interfaces/ITeacherRepository';
 import { Request, Response } from "express";
  
+/**
+ * @openapi
+ * /create:
+ *   post:
+ *     summary: Crea un nuevo profesor.
+ *     requestBody:
+ *       description: Datos del profesor a crear.
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               description:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               birthDate:
+ *                 type: string
+ *                 format: date
+ *     responses:
+ *       '201':
+ *         description: Creado correctamente. Devuelve el profesor creado.
+ *       '500':
+ *         description: Error interno del servidor. Devuelve un mensaje de error.
+ */
+
  export class TeacherController {
 
     constructor(private _teacherRepository: ITeacherRepository){
